@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>DBP - UCSP</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="Shortcut Icon" href="img/icon.ico"> 
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <header>
+        <div class="container">
+        <div class="row">
+         <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+           <h1 class="texto tamtext1">Desarrollo Basado en Plataformas</h1>
+           <h5 class="texto tamtext2">Andros Ariel Rosas Lopez</h5>
+         </div>
+         <div class="hidden-xs col-sm-6 col-md-4 col-lg-4 centrar">
+           <a href="#"><img  height="130px" weidht="130px" src="img/ucsp.png" alt=""></a>
+           
+         </div>
+        </div>
+        </div>
+        </header>
+       
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Cambiar navegacion</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a href="index.html" class="navbar-brand">Inicio</a></div>
+          
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="calculadora.html">Calculadora</a></il>                          
+            </ul>            
+          </div>
+        </nav>
+   
+   <div class="container">      
+   <section>
+       <div class="row">
+           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="margen_calc">
+            <div class="table-responsive" align="center">              
+              <form>
+              <table>
+                <tr>
+                    <td colspan="4"><input class="display_calc" type="text" name="display" value="">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input class="numeros" id="7" type="button" value="7" onClick="escribir(this.form.display, '7')"></td>
+                    <td><input class="numeros" id="8" type="button" value="8" onClick="escribir(this.form.display, '8')"></td>
+                    <td><input class="numeros" id="9" type="button" value="9" onClick="escribir(this.form.display, '9')"></td>
+                    <td><input class="operador" id="suma" type="button" value="+" onClick=""></td>
+                </tr>
+                <tr>
+                    <td><input class="numeros" id="4" type="button" value="4" onClick="escribir(this.form.display, '4')"></td>
+                    <td><input class="numeros" id="5" type="button" value="5" onClick="escribir(this.form.display, '5')"></td>
+                    <td><input class="numeros" id="6" type="button" value="6" onClick="escribir(this.form.display, '6')"></td>
+                    <td><input class="operador" id="resta" type="button" value="-" onClick=""></td>
+                </tr> 
+                <tr>
+                    <td><input class="numeros" id="1" type="button" value="1" onClick="escribir(this.form.display, '1')"></td>
+                    <td><input class="numeros" id="2" type="button" value="2" onClick="escribir(this.form.display, '2')"></td>
+                    <td><input class="numeros" id="3" type="button" value="3" onClick="escribir(this.form.display, '3')"></td>
+                    <td><input class="operador" id="multiplicacion" value="*" type="button" onClick=""></td>
+                </tr>
+                <tr>                    
+                    <td><input class="numeros" id="0" type="button" value="0" onClick="escribir(this.form.display, '0')"></td>
+                    <td><input class="numeros" id="punto" type="button" value="." onClick="escribir(this.form.display, '.')"></td>
+                    <td><input class="numeros" id="igual" type="button" value="=" onClick=""></td>
+                    <td><input class="operador" id="division" type="button" value="/" onClick=""></td>
+                </tr>
+                <tr>
+                  <td colspan="4"><input class="borrar" id="clear" type="button" value="Borrar" onClick="this.form.display.value = 0 "></td>
+                </tr>
+              </table>
+              </form>
+            </div>
+            </div>    
+           </div>           
+       </div>
+   </section>
+   </div>
+
+    <section class="color5">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">              
+            </div>         
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">              
+            </div>                
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">              
+            </div>          
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+              <h3 class="color4">Contacto</h3>
+              <a href="https://www.facebook.com/Andros.Rosas" target="_blank">Facebook</a><br>
+              <a href="https://www.instagram.com/androsrosas/" target="_blank">Instagram</a><br>
+              <a href="https://www.flickr.com/photos/androsrosas" target="_blank">Flickr</a><br>              
+            </div>          
+        </div><br>
+    </section>
+
+      <footer class="color6">
+        <div class="container"><br>
+            <img src="img/logo.png" width="75" height="50" alt="Logo" /> | © Todos los derechos reservados.        
+                      
+          </br></div>
+        </footer>
+
+
+        <script src="js/plugins.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        
+        <script src="js/vendor/bootstrap.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <script>
+        function escribir(input, character)
+        {
+            if(input.value == null || input.value == "0")
+                input.value = character
+            else
+                input.value += character
+        }        
+        function cambio_signo(input)
+        {
+            if(input.value.substring(0, 1) == "-")
+                input.value = input.value.substring(1, input.value.length)
+            else
+                input.value = "-" + input.value
+        }        
+        </script>
+
+    </body>
+</html>
