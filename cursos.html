@@ -59,14 +59,51 @@
        <div class="row">
            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="row" align="center">
-            <p>
-            <h2>Página principal del curso Desarrollo Basado en Plataformas</h2>
-            <br>
-            <br>
-            <br>
-            <h3>Las prácticas se encuentran en la barra de navegación de la parte superior</h3>
-            <br>            
-            </p>
+            <!--- -->
+
+            <button onclick="verDatos()"  type="button" class="btn btn-primary">Ver datos</button>
+  <form>
+  <div class="table-responsive" align="center"> 
+  <table id="tbl" border="1" style="display: none; margin: 10px; text-align: center;" class="table table-bordered" >
+    <tr>
+      <td>Nombre:</td>
+      <td id="nombre"></td>
+    </tr>
+    <tr>
+      <td>Edad:</td>
+      <td id="edad"></td>
+    </tr>
+    <tr>
+      <td> Cursos:</td>
+      <td id="curso"> </td>
+    </tr>
+  </table>
+  </div>  
+  <br>
+  
+  <div id= "sec" name="info" style="display: none">  
+  <div class="table-responsive" align="center"> 
+  <table id="tbl_1" border="1" style="display: none; margin: 10px; text-align: center;"  class="table table-bordered" >    
+    <tr>    
+    <td> Indice: </td>
+    <td> <input type="text" id="indice_c" style="text-align:center"> </input> </td>
+    </tr>
+    <tr>    
+    <td> Código: </td>
+    <td> <input type="text" id="codigo_c" style="text-align:center"> </input> </td>
+    </tr>
+    <tr>
+    <td> Nombre: </td>
+    <td> <input type="text" id="nombre_c" style="text-align:center"> </input> </td>
+    </tr>
+  </table>  
+  </div>
+  <button type="button" class="btn btn-success" onclick="guardar(this.form.indice_c.value,this.form.nombre_c.value,this.form.codigo_c.value)">Guardar</button>
+  <button  type="button" class="btn btn-danger" onclick="cancelar()">Cancelar</button>
+  </form>
+  </div>
+
+            <!--- -->
             </div>    
            </div>           
        </div>
@@ -115,5 +152,105 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+        <script>    
+    var alumno = {
+      "nombre": "Juan",
+      "edad": 23,
+      "cursos":
+      [
+      {       
+       "indice" : 0,
+       "codigo" : "CS-01",
+       "nombre" : "Algoritmos"
+      },
+      
+      {       
+       "indice" : 1,
+       "codigo" : "CS-02",
+       "nombre" : "Base de Datos"
+      }
+
+      ],
+     "direccion" :
+      {
+       "tipo" : "Calle",
+       "nombre" : "Los rosales 123"
+      }
+                };
+
+   function mostrar_info(no)
+   {
+    var sec = document.getElementById("sec");
+    sec.style.display = "table","button";    
+    var tbl = document.getElementById("tbl_1");
+    tbl.style.display = "table";
+    var nom_c = document.getElementById("nombre_c");
+    var cod_c = document.getElementById("codigo_c");    
+    var ind_c = document.getElementById("indice_c");    
+    nom_c.value = alumno.cursos[no].nombre;
+    cod_c.value = alumno.cursos[no].codigo;
+    ind_c.value = alumno.cursos[no].indice;
+   }
+
+   function verDatos() {
+    var tbl = document.getElementById("tbl");
+    tbl.style.display = "table";
+    var nom = document.getElementById("nombre");
+    var edad = document.getElementById("edad");    
+    
+    nom.innerText = alumno.nombre;
+    edad.innerText = alumno.edad;
+    var varios="<ul>";
+
+    var curso_m = document.getElementById("curso");
+    for(var i=0; i<alumno.cursos.length; i++)
+    {
+      var curso = alumno.cursos[i].nombre;            
+      var cod = alumno.cursos[i].codigo;
+      varios = varios + "<li> <button type='button' class='btn btn-default' onclick='mostrar_info("+i+")'>"+ curso +"</li></button><button type='button' class='btn btn-danger' id='x' onclick=borrar('"+cod+"')>Borrar</button>";
+    }
+    varios = varios + "</ul>";
+    curso_m.innerHTML = varios;      
+  }
+
+  function ocultar()
+  {
+    var sec = document.getElementById("sec");
+    sec.style.display = "none";    
+    var tbl_1 = document.getElementById("tbl_1");
+    tbl_1.style.display = "none";
+    var tbl = document.getElementById("tbl");
+    tbl.style.display = "none";
+  }
+
+  function guardar(indice, nombre, codigo)
+  {           
+   for (var i in alumno.cursos) {
+     if (alumno.cursos[i].indice == indice) {      
+        alumno.cursos[i].nombre = nombre;
+        alumno.cursos[i].codigo = codigo;
+        break;
+                                          }
+                            }
+    ocultar();
+  }
+
+  function cancelar()
+  {
+    ocultar();
+  }  
+
+  function borrar(codigo)
+  {
+    for( var i in alumno.cursos){
+          if(alumno.cursos[i].codigo == codigo)
+          {                        
+            alumno.cursos[i].nombre = "";   
+            alumno.cursos[i].codigo = "";
+          }
+                                }
+    ocultar();                            
+  }
+</script>
     </body>
 </html>
